@@ -25,3 +25,11 @@ func readFromSource(r io.Reader) {
 
 	fmt.Printf("Read %d bytes: %s\n", n, buf)
 }
+
+func WriteToDest(w io.Writer, data string) {
+	n, err := w.Write([]byte(data))
+	if err != nil {
+		log.Fatal(err)
+		fmt.Println(err)
+	}
+}
